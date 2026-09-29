@@ -1,0 +1,14 @@
+{
+  "name": "mcp-conduct-register",
+  "owner": {
+    "name": "The HORIZONs Co., Ltd.",
+    "url": "https://shield.the-horizons-innovation.com"
+  },
+  "plugins": [
+    {
+      "name": "mcp-conduct-register",
+      "source": "./",
+      "description": "See how an MCP server or AI agent behaved when it was measured, with a Bitcoin-anchored history you can recompute. Read-only. Adds /conduct, /nenrin."
+    }
+  ]
+}
