@@ -16,7 +16,7 @@ Two skills: `verify-mcp-conduct` and `nenrin`. Two commands:
 - `/conduct <MCP endpoint>`: the register's verdict and how to recompute it.
 - `/nenrin <endpoint>`: the recorded, Bitcoin-anchored history, by the gate and by outside witnesses.
 
-Where a shell is available, the `nenrin` skill also runs the zero-dependency offline verifier `npx -y nenrin-verify bundle.json` (npm, published with provenance and reproducible from its commit).
+The `nenrin` skill also gives you the command for the zero-dependency offline verifier, `npx -y nenrin-verify bundle.json` (npm, published with provenance and reproducible from its commit). You run it; the plugin never executes code itself.
 
 ## Install
 
@@ -28,9 +28,11 @@ From Claude Code:
 /reload-plugins
 ```
 
-## What it reads and writes
+## What it reads and writes, and where requests go
 
 - Every tool reads. Nothing is written by this plugin.
+- Requests go to the two declared MCP servers. `jidec-ledger` reads the public ledger at https://ledger.horizonshield.dev. The skills may point you to that ledger's public URLs and to the npm package nenrin-verify; you open or run those yourself.
+- No personal data is needed or collected. Request logs are kept only briefly for security and rate limiting; see the privacy policy.
 - `check_conformance` contacts the endpoint you name (initialize, tools/list, its agent card). It runs a tool there only if that server's owner published consent at `/.well-known/mcp-conduct.json`. The skill tells Claude to say so first.
 
 ## What it does not claim
